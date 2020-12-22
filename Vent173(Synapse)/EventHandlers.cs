@@ -11,6 +11,15 @@ namespace Vent173_Synapse_
             Server.Get.Events.Map.DoorInteractEvent += Map_DoorInteractEvent;
             Server.Get.Events.Round.RoundStartEvent += Round_RoundStartEvent;
             Server.Get.Events.Round.RoundEndEvent += Round_RoundEndEvent;
+            Server.Get.Events.Player.PlayerDamageEvent += Player_PlayerDamageEvent;
+        }
+
+        private void Player_PlayerDamageEvent(Synapse.Api.Events.SynapseEventArguments.PlayerDamageEventArgs ev)
+        {
+            if(ev.Killer.RoleType == RoleType.Scp173 && ev.Killer.Invisible)
+            {
+                ev.DamageAmount = 0f;
+            }
         }
 
         private void Round_RoundEndEvent()
