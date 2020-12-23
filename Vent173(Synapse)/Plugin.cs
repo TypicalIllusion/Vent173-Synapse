@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using MEC;
 using Synapse.Api.Plugin;
 
@@ -12,7 +12,7 @@ namespace Vent173_Synapse_
        SynapseMajor = 2,
        SynapseMinor = 3,
        SynapsePatch = 1,
-       Version = "1.2.0"
+       Version = "1.2.1"
    )]
     class Plugin : AbstractPlugin
     {
