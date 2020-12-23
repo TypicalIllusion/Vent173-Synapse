@@ -11,12 +11,8 @@ namespace Vent173_Synapse_
        Name = "Vent173",
        SynapseMajor = 2,
        SynapseMinor = 3,
-       SynapsePatch = 0,
-<<<<<<< HEAD
+       SynapsePatch = 1,
        Version = "1.2.0"
-=======
-       Version = "1.0.0"
->>>>>>> 3783c80c4c8af3a8cad0080dc721e2485203a6d8
    )]
     class Plugin : AbstractPlugin
     {
