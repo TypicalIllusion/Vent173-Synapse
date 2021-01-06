@@ -45,9 +45,16 @@ namespace Vent173_Synapse_
                             context.Player.Invisible = false;
                         });
                     }
+                    result.Message = $"You are now {(context.Player.Invisible ? "invisible" : "visible")}!";
+                    foreach (Player shitass in Synapse.Server.Get.Players)
+                    {
+                        if (shitass.PlayerEffectsController.GetEffect<Amnesia>().Enabled && context.Player.RoleType == RoleType.Scp173)
+                        {
+                            context.Player.Scp173Controller.IgnoredPlayers.Add(shitass);
+                        }
+                    }
                     Plugin.Coroutine.Add(Timing.RunCoroutine(VentCooldown(Plugin.Config.VentCooldown, context.Player)));
                     CmdCooldown.Add(context.Player);
-                    result.Message = $"You are now {(context.Player.Invisible ? "invisible" : "visible")}!";
                     result.State = CommandResultState.Ok;
                     return result;
                 }
