@@ -13,9 +13,6 @@ namespace Vent173_Synapse_
        SynapseMinor = 4,
        SynapsePatch = 0,
        Version = "1.5.0"
-       SynapseMinor = 3,
-       SynapsePatch = 1,
-       Version = "1.2.1"
    )]
     class Plugin : AbstractPlugin
     {
