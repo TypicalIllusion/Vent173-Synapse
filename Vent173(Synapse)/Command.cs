@@ -19,7 +19,7 @@ namespace Vent173_Synapse_
     {
         public static IEnumerator<float> VentCooldownStart(float duration, Player pp)
         {
-            pp.BroadcastMessage("You are preparing your abilities", 2);
+            pp.SendBroadcast(2, "You are preparing your abilities");
             yield return Timing.WaitForSeconds(Plugin.Config.VentCooldownStart);
         }
         public static List<Player> CmdCooldown = new List<Player>();
@@ -37,7 +37,7 @@ namespace Vent173_Synapse_
                         else
                             effect.ServerDisable();
                     context.Player.Invisible = !context.Player.Invisible;
-                    context.Player.BroadcastMessage($"You are now {(context.Player.Invisible ? "invisible" : "visible")}!", 5);
+                    context.Player.SendBroadcast(3, $"You are now {(context.Player.Invisible ? "invisible" : "visible")}!");
                     if (context.Player.Invisible)
                     {
                         Timing.CallDelayed(15f, () =>
@@ -61,7 +61,7 @@ namespace Vent173_Synapse_
             }
             else
             {
-                context.Player.BroadcastMessage("You are on cooldown!", 2);
+                context.Player.SendBroadcast(2, "You are on cooldown!");
             }
             result.Message = "You are not SCP-173";
             result.State = CommandResultState.Error;
